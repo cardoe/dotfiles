@@ -26,6 +26,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
 NeoBundleLazy 'tpope/vim-sensible'
+NeoBundle 'bling/vim-airline'
 
 call neobundle#end()
 

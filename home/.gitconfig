@@ -1,0 +1,23 @@
+[user]
+	name = Doug Goldstein
+	email = cardoe@cardoe.com
+[imap]
+	folder = [Gmail]/Drafts
+	host = imaps://imap.gmail.com
+	user = cardoe@cardoe.com
+[sendemail]
+	smtpserver = smtp.gmail.com
+	smtpserverport = 587
+	smtpencryption = tls
+	smtpuser = cardoe@cardoe.com
+	chainreplyto = false
+[alias]
+	st = status
+	satus = status
+    review = !git --no-pager log --reverse --format=oneline master..
+    cp = cherry-pick -x
+    ver = describe --match=v* --contains
+[diff]
+    renames = true
+[push]
+	default = simple

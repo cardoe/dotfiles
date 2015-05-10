@@ -1,8 +1,39 @@
-" Enable Pathogen
-filetype off
-execute pathogen#infect()
+" Skip initialization for vim-tiny or vim-small
+if !1 | finish | endif
+
+" Install NeoBundle if it is missing
+if !isdirectory(expand('~/.vim/bundle/neobundle.vim'))
+	call system('git clone https://github.com/Shougo/neobundle.vim.git
+		\ ~/.vim/bundle/neobundle.vim')
+endif
+
+" Run in improved mode if we aren't already
+if has('vim_starting')
+	if &compatible
+		set nocompatible
+	endif
+
+	" Add NeoBundle to the path
+	set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Turn on NeoBundle
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+
+call neobundle#end()
+
+" Enable syntax highlighting and filetype support and indent
 syntax on
 filetype plugin indent on
+
+" Install missing bundles
+NeoBundleCheck
 
 " Terminals are meant to be black
 set bg=dark

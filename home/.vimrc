@@ -25,6 +25,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
+NeoBundleLazy 'tpope/vim-sensible'
 
 call neobundle#end()
 
@@ -67,3 +68,5 @@ endif
 " Leave me for the end
 set exrc " enables per-directory .vimrc files
 set secure " disables unsafe commands in local .vimrc files
+
+NeoBundleSource

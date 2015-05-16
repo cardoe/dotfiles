@@ -47,7 +47,10 @@ BREW_PREFIX=$(brew --prefix 2> /dev/null)
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast brew virtualenvwrapper terminalapp)
+plugins=(gitfast virtualenvwrapper terminalapp)
+
+# Do we have Homebrew installed?
+[ -n ${BREW_PREFIX} ] && plugins+="brew"
 
 source $ZSH/oh-my-zsh.sh
 

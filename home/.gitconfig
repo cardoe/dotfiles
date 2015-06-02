@@ -14,10 +14,12 @@
 [alias]
 	st = status
 	satus = status
-    review = !git --no-pager log --reverse --format=oneline master..
-    cp = cherry-pick -x
-    ver = describe --match=v* --contains
+	review = !git --no-pager log --reverse --format=oneline master..
+	cp = cherry-pick -x
+	ver = describe --match=v* --contains
 [diff]
-    renames = true
+	renames = true
 [push]
 	default = simple
+[credential]
+	helper = osxkeychain

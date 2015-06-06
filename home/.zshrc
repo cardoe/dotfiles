@@ -64,6 +64,9 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 alias info='info --vi-keys'
 
+# Some utilities like to complain about EDITOR not being set
+export EDITOR=vim
+
 # Ruby Gem Home
 type -p ruby 2>&1 > /dev/null
 if [ $? -eq 0 ]; then

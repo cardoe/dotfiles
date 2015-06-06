@@ -65,15 +65,18 @@ source $ZSH/oh-my-zsh.sh
 alias info='info --vi-keys'
 
 # Ruby Gem Home
-export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
+type -p ruby 2>&1 > /dev/null
+if [ $? -eq 0 ]; then
+	export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
+	# Enable Ruby Gem binaries
+	export PATH="${PATH}:${GEM_HOME}/bin"
+fi
 
 # Go Path
 export GOPATH=${HOME}/go
 
 # Enable Homebrew installed items to come first
 export PATH="/usr/local/sbin:/usr/local/bin:${PATH}"
-# Enable Ruby Gem binaries
-export PATH="${PATH}:${GEM_HOME}/bin"
 # Enable GOROOT path
 export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
 # Enable GOPATH path

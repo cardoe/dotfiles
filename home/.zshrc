@@ -93,4 +93,4 @@ export PIP_DOWNLOAD_CACHE=$HOME/Library/Caches/pip-downloads
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 # System specific zshrc
-[ -e "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local
+[ -e "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"

@@ -53,6 +53,10 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 autocmd BufNewFile,BufEnter,BufRead *.rb set filetype=ruby
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
 
+" Bitbake files are just shell files
+autocmd BufNewFile,BufEnter,BufRead *.bb set filetype=sh
+autocmd BufNewFile,BufEnter,BufRead *.bbappend set filetype=sh
+
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/

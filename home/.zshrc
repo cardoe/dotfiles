@@ -44,8 +44,7 @@ ZSH_THEME="gentoo"
 BREW_PREFIX=$(brew --prefix 2> /dev/null)
 
 # Fix for the plugin below for brewed Python
-[ -n ${BREW_PREFIX} ] && \
-    export VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python'
+export VIRTUALENVWRAPPER_PYTHON="${BREW_PREFIX:-/usr}/bin/python"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/

@@ -56,7 +56,7 @@ type -p virtualenvwrapper.sh 2>&1 > /dev/null
 [ $? -eq 0 ] && plugins+="virtualenvwrapper"
 
 # Do we have Homebrew installed?
-[ -n ${BREW_PREFIX} ] && plugins+="brew"
+[ -n ${BREW_PREFIX} ] && plugins+="brew boot2docker"
 
 source $ZSH/oh-my-zsh.sh
 

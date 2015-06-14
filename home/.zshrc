@@ -63,6 +63,10 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 alias info='info --vi-keys'
 
+# Work around Ubuntu's ack installation
+type -p ack-grep 2>&1 > /dev/null
+[ $? -eq 0 ] && alias ack='ack-grep'
+
 # Some utilities like to complain about EDITOR not being set
 export EDITOR=vim
 

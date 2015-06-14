@@ -90,8 +90,6 @@ export PATH="${PATH}:${GOPATH}/bin"
 
 export LIBVIRT_DEFAULT_URI="qemu+tcp://swanson.local./system"
 
-export PIP_DOWNLOAD_CACHE=$HOME/Library/Caches/pip-downloads
-
 # Enable Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 

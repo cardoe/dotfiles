@@ -58,6 +58,9 @@ autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
 autocmd BufNewFile,BufEnter,BufRead *.bb set filetype=sh
 autocmd BufNewFile,BufEnter,BufRead *.bbappend set filetype=sh
 
+" Markdown not Modula-2..
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/

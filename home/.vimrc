@@ -29,6 +29,7 @@ NeoBundleLazy 'tpope/vim-sensible'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'wting/rust.vim'
+NeoBundle 'kergoth/vim-bitbake'
 
 call neobundle#end()
 
@@ -53,10 +54,6 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 " Ruby files should get what appears the be the default of 2 spaces
 autocmd BufNewFile,BufEnter,BufRead *.rb set filetype=ruby
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
-
-" Bitbake files are just shell files
-autocmd BufNewFile,BufEnter,BufRead *.bb set filetype=sh
-autocmd BufNewFile,BufEnter,BufRead *.bbappend set filetype=sh
 
 " Markdown not Modula-2..
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown

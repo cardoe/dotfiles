@@ -81,8 +81,9 @@ fi
 # Go Path
 export GOPATH=${HOME}/go
 
-# Enable Homebrew installed items to come first
-export PATH="/usr/local/sbin:/usr/local/bin:${PATH}"
+# Enable Homebrew installed items to come first before system items
+# But my overrides to be before that
+export PATH="${HOME}/.bin:/usr/local/sbin:/usr/local/bin:${PATH}"
 # Enable GOROOT path
 export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
 # Enable GOPATH path

@@ -88,8 +88,6 @@ export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
 # Enable GOPATH path
 export PATH="${PATH}:${GOPATH}/bin"
 
-export LIBVIRT_DEFAULT_URI="qemu+tcp://swanson.local./system"
-
 # Enable Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 

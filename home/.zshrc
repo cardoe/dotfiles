@@ -88,6 +88,15 @@ export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
 # Enable GOPATH path
 export PATH="${PATH}:${GOPATH}/bin"
 
+# Enable keychain
+type -p keychain 2>&1 > /dev/null
+if [ $? -eq 0 ]; then
+	eval $(keychain --agents gpg,ssh ~/.ssh/id_rsa)
+fi
+
+# ensure the passphrase is always requested on the current TTY
+export GPG_TTY=$(tty)
+
 # Enable Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 

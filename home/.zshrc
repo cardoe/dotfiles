@@ -91,7 +91,9 @@ export PATH="${PATH}:${GOPATH}/bin"
 # Enable keychain
 type -p keychain 2>&1 > /dev/null
 if [ $? -eq 0 ]; then
-	eval $(keychain --agents gpg,ssh ~/.ssh/id_rsa)
+	keychain --agents gpg,ssh ~/.ssh/id_rsa
+	source ~/.keychain/$HOST-sh
+	source ~/.keychain/$HOST-sh-gpg
 fi
 
 # ensure the passphrase is always requested on the current TTY

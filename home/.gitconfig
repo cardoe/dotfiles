@@ -25,5 +25,7 @@
 	default = simple
 [credential]
 	helper = osxkeychain
+[credential "https://github.com"]
+	username = cardoe
 [color]
 	ui = auto

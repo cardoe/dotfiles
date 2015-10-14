@@ -56,7 +56,17 @@ type -p virtualenvwrapper.sh 2>&1 > /dev/null
 [ $? -eq 0 ] && plugins+="virtualenvwrapper"
 
 # Do we have Homebrew installed?
-[ -n ${BREW_PREFIX} ] && plugins+="brew boot2docker"
+[ -n ${BREW_PREFIX} ] && plugins+="brew"
+
+# Do we have Docker Machine
+dmvm="dev"
+type -p docker-machine 2>&1 > /dev/null
+if [ $? -eq 0 ]; then
+	if [ $(docker-machine status ${dmvm}) = "Running" ]; then
+		eval "$(docker-machine env dev)"
+	fi
+fi
+unset dmvm
 
 source $ZSH/oh-my-zsh.sh
 

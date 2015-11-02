@@ -28,7 +28,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundleLazy 'tpope/vim-sensible'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'wting/rust.vim'
+NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'kergoth/vim-bitbake'
 
 call neobundle#end()

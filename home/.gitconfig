@@ -25,6 +25,7 @@
 	default = simple
 [credential]
 	helper = osxkeychain
+	helper = cache --timeout=3600
 [credential "https://github.com"]
 	username = cardoe
 [color]

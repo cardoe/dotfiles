@@ -30,6 +30,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'kergoth/vim-bitbake'
+NeoBundle 'keith/swift.vim'
 
 call neobundle#end()
 

@@ -22,6 +22,9 @@
 	ver = describe --match=v* --contains
 [diff]
 	renames = true
+[pull]
+	ff = only
+	rebase = true
 [push]
 	default = simple
 [credential]

@@ -59,6 +59,9 @@ autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab
 " Cucumber (behave) files should use spaces
 autocmd FileType cucumber set tabstop=4|set shiftwidth=4|set expandtab
 
+" Kconfig files should use tabs
+autocmd FileType kconfig set noexpandtab
+
 " Markdown not Modula-2..
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 

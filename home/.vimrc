@@ -47,6 +47,7 @@ set bg=dark
 " 4 space tabs
 set sw=4
 set ts=4
+set expandtab
 
 " Python files should get PEP8 white space settings
 autocmd BufNewFile,BufEnter,BufRead *.py set filetype=python

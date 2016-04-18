@@ -20,6 +20,7 @@
 	revshow = !sh -c 'repo=$1 && repo=${repo:=origin/master} && git --no-pager log --reverse --oneline ${repo}.. | head -n ${0} | tail -n 1 | cut -f1 -d \" \" | xargs git show'
 	cp = cherry-pick -x
 	ver = describe --match=v* --contains
+	show-ignore = ls-files -ci --exclude-standard
 [diff]
 	renames = true
 [pull]

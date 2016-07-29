@@ -63,7 +63,7 @@ dmvm="dev"
 type -p docker-machine 2>&1 > /dev/null
 if [ $? -eq 0 ]; then
 	if [ $(docker-machine status ${dmvm}) = "Running" ]; then
-		eval "$(docker-machine env dev)"
+		eval "$(docker-machine env ${dmvm})"
 	fi
 fi
 unset dmvm

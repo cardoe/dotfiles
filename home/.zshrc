@@ -60,10 +60,11 @@ type -p virtualenvwrapper.sh 2>&1 > /dev/null
 
 # Do we have Docker Machine
 dmvm="dev"
-type -p docker-machine 2>&1 > /dev/null
+type -p docker-machine > /dev/null 2>&1
 if [ $? -eq 0 ]; then
-	if [ $(docker-machine status ${dmvm}) = "Running" ]; then
-		eval "$(docker-machine env ${dmvm})"
+    docker-machine status ${dmvm} > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        eval "$(docker-machine env ${dmvm})"
 	fi
 fi
 unset dmvm

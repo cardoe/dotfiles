@@ -35,5 +35,3 @@
 	username = cardoe
 [color]
 	ui = auto
-[commit]
-    gpgsign = true

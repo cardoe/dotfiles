@@ -44,6 +44,10 @@ NeoBundleCheck
 " Terminals are meant to be black
 set bg=dark
 
+" Fix up tab completion
+set wildmode=longest,list,full
+set wildmenu
+
 " 4 space tabs
 set sw=4
 set ts=4

@@ -70,6 +70,9 @@ autocmd FileType kconfig set noexpandtab
 " Markdown not Modula-2..
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+" Rust
+autocmd FileType rust setlocal makeprg=cargo|setlocal errorformat=%f:%l:%c:%m
+
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/

@@ -100,6 +100,17 @@ autocmd BufReadPost *
     \     endif |
     \ endif
 
+if executable("ag")
+    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
+let mapleader = ","
+nnoremap <leader>b :b <C-d>
+nnoremap <leader>g :grep<space>
+nnoremap <leader>m :make<space>
+nnoremap <leader>q :b#<CR>
+
 " Leave me for the end
 set exrc " enables per-directory .vimrc files
 set secure " disables unsafe commands in local .vimrc files

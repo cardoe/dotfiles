@@ -78,6 +78,9 @@ autocmd FileType rust setlocal makeprg=cargo|setlocal errorformat=%f:%l:%c:%m
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType json set tabstop=2|set shiftwidth=2|set expandtab
 
+" Riot Tags are HTML
+autocmd BufNewFile,BufEnter,BufRead *.tag set filetype=html
+
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/

@@ -68,6 +68,9 @@ autocmd FileType cucumber set tabstop=4|set shiftwidth=4|set expandtab
 " Kconfig files should use tabs
 autocmd FileType kconfig set noexpandtab
 
+" bitbake recipes should use tabs
+autocmd FileType bitbake set noexpandtab
+
 " Markdown not Modula-2..
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 

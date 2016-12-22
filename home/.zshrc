@@ -109,7 +109,7 @@ export PATH="${PATH}:${GOPATH}/bin"
 # Enable keychain
 type -p keychain 2>&1 > /dev/null
 if [ $? -eq 0 ]; then
-	keychain --agents gpg,ssh ~/.ssh/id_rsa
+	keychain --agents gpg,ssh --inherit any
 	source ~/.keychain/$HOST-sh
 	source ~/.keychain/$HOST-sh-gpg
 fi

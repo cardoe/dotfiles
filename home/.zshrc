@@ -74,6 +74,12 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 alias info='info --vi-keys'
 
+# tweak less
+# - don't mess with the termcap stuff
+# - behave like cat for less than a page
+# - colorize
+export LESS='-XFR'
+
 # Ubuntu doesn't have wgetpaste so pastebinit is good enough
 type -p pastebinit 2>&1 > /dev/null
 [ $? -eq 0 ] && alias wgetpaste='pastebinit'

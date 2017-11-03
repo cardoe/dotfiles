@@ -80,6 +80,7 @@ autocmd FileType rust setlocal makeprg=cargo|setlocal errorformat=%f:%l:%c:%m
 " JavaScript Standard Style
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType json set tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab
 
 " Riot Tags are HTML
 autocmd BufNewFile,BufEnter,BufRead *.tag set filetype=html

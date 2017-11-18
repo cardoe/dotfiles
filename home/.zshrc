@@ -86,10 +86,6 @@ export LESS='-XFR'
 type -p pastebinit 2>&1 > /dev/null
 [ $? -eq 0 ] && alias wgetpaste='pastebinit'
 
-# Work around Ubuntu's ack installation
-type -p ack-grep 2>&1 > /dev/null
-[ $? -eq 0 ] && alias ack='ack-grep'
-
 # ripgrep is my new jam
 type -p rg 2>&1 > /dev/null
 [ $? -eq 0 ] && alias ag='rg' || alias rg='ag'

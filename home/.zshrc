@@ -58,6 +58,19 @@ type -p virtualenvwrapper.sh 2>&1 > /dev/null
 # Do we have Homebrew installed?
 [ -n ${BREW_PREFIX} ] && plugins+="brew"
 
+# Go Path
+export GOPATH=${HOME}/go
+
+# Enable Homebrew installed items to come first before system items
+# But my overrides to be before that
+export PATH="${HOME}/.bin:/usr/local/sbin:/usr/local/bin:${PATH}"
+# Enable Cargo install path
+export PATH="${PATH}:${HOME}/.cargo/bin"
+# Enable GOROOT path
+export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
+# Enable GOPATH path
+export PATH="${PATH}:${GOPATH}/bin"
+
 # Do we have Docker Machine
 dmvm="dev"
 type -p docker-machine > /dev/null 2>&1
@@ -102,19 +115,6 @@ if [ $? -eq 0 ]; then
 	# Enable Ruby Gem binaries
 	export PATH="${PATH}:${GEM_HOME}/bin"
 fi
-
-# Go Path
-export GOPATH=${HOME}/go
-
-# Enable Homebrew installed items to come first before system items
-# But my overrides to be before that
-export PATH="${HOME}/.bin:/usr/local/sbin:/usr/local/bin:${PATH}"
-# Enable Cargo install path
-export PATH="${PATH}:${HOME}/.cargo/bin"
-# Enable GOROOT path
-export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
-# Enable GOPATH path
-export PATH="${PATH}:${GOPATH}/bin"
 
 # Enable keychain
 type -p keychain 2>&1 > /dev/null

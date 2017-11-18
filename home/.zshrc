@@ -71,17 +71,6 @@ export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
 # Enable GOPATH path
 export PATH="${PATH}:${GOPATH}/bin"
 
-# Do we have Docker Machine
-dmvm="dev"
-type -p docker-machine > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-    docker-machine status ${dmvm} > /dev/null 2>&1
-    if [ $? -eq 0 ]; then
-        eval "$(docker-machine env ${dmvm})"
-	fi
-fi
-unset dmvm
-
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...

@@ -90,6 +90,10 @@ type -p pastebinit 2>&1 > /dev/null
 type -p rg 2>&1 > /dev/null
 [ $? -eq 0 ] && alias ag='rg' || alias rg='ag'
 
+# exa over ls
+type -p exa 2>&1 > /dev/null
+[ $? -eq 0 ] && alias ls='exa' || alias exa='ls'
+
 # Some utilities like to complain about EDITOR not being set
 export EDITOR=vim
 

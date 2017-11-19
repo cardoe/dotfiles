@@ -108,7 +108,10 @@ fi
 # Enable keychain
 type -p keychain 2>&1 > /dev/null
 if [ $? -eq 0 ]; then
-	keychain --agents gpg,ssh --inherit any-once ~/.ssh/id_rsa*
+	# find keys that start with id but don't end in .pub
+	local keyfiles=$(find $HOME/.ssh/ -name 'id*' -a ! -name '*.pub')
+	eval $(keychain --eval --agents gpg,ssh --inherit any-once "${keyfiles}")
+	unset keyfiles
 	source ~/.keychain/$HOST-sh
 	source ~/.keychain/$HOST-sh-gpg
 fi

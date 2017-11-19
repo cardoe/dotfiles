@@ -108,7 +108,7 @@ fi
 # Enable keychain
 type -p keychain 2>&1 > /dev/null
 if [ $? -eq 0 ]; then
-	keychain --agents gpg,ssh --inherit any ~/.ssh/id_rsa*
+	keychain --agents gpg,ssh --inherit any-once ~/.ssh/id_rsa*
 	source ~/.keychain/$HOST-sh
 	source ~/.keychain/$HOST-sh-gpg
 fi

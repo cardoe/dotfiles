@@ -71,6 +71,9 @@ export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
 # Enable GOPATH path
 export PATH="${PATH}:${GOPATH}/bin"
 
+type -p python3 2>&1 > /dev/null
+[ $? -eq 0 ] && export PATH="$(python3 -m site --user-base)/bin:${PATH}"
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...

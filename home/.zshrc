@@ -112,8 +112,6 @@ if [ $? -eq 0 ]; then
 	local keyfiles=$(find $HOME/.ssh/ -name 'id*' -a ! -name '*.pub')
 	eval $(keychain --eval --agents gpg,ssh --inherit any-once "${keyfiles}")
 	unset keyfiles
-	source ~/.keychain/$HOST-sh
-	source ~/.keychain/$HOST-sh-gpg
 fi
 
 # ensure the passphrase is always requested on the current TTY

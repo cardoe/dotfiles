@@ -116,6 +116,10 @@ if [ $? -eq 0 ]; then
 	export PATH="${PATH}:${GEM_HOME}/bin"
 fi
 
+# Brewfile
+alias brew-save='brew bundle dump --force --global'
+alias brew-check='brew bundle check --global'
+
 # Enable keychain
 type -p keychain 2>&1 > /dev/null
 if [ $? -eq 0 ]; then

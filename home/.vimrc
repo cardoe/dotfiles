@@ -32,6 +32,7 @@ NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'kergoth/vim-bitbake'
 NeoBundle 'keith/swift.vim'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'cespare/vim-toml'
 
 call neobundle#end()
 

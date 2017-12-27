@@ -21,6 +21,7 @@
 	cp = cherry-pick -x
 	ver = describe --match=v* --contains
 	show-ignore = ls-files -ci --exclude-standard
+	graph = log --graph --abbrev-commit --decorate --date=relative --all
 [diff]
 	renames = true
 [pull]

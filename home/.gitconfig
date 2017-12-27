@@ -38,3 +38,5 @@
 	ui = auto
 [commit]
 	gpgsign = true
+[rerere]
+	enabled = true

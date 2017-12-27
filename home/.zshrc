@@ -101,6 +101,10 @@ type -p rg 2>&1 > /dev/null
 type -p exa 2>&1 > /dev/null
 [ $? -eq 0 ] && alias ls='exa' || alias exa='ls'
 
+# colordiff over diff
+type -p colordiff 2>&1 > /dev/null
+[ $? -eq 0 ] && alias diff='colordiff'
+
 # Some utilities like to complain about EDITOR not being set
 export EDITOR=vim
 

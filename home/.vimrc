@@ -33,6 +33,7 @@ NeoBundle 'kergoth/vim-bitbake'
 NeoBundle 'keith/swift.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'cespare/vim-toml'
+NeoBundle 'leafgarland/typescript-vim'
 
 call neobundle#end()
 

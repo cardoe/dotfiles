@@ -116,6 +116,9 @@ if [ $? -eq 0 ]; then
 	export PATH="${PATH}:${GEM_HOME}/bin"
 fi
 
+# Node bits
+export PATH="${PATH}:${HOME}/.node/bin"
+
 # Brewfile
 alias brew-save='brew bundle dump --force --global'
 alias brew-check='brew bundle check --global'

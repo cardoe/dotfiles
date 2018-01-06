@@ -140,3 +140,9 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 # System specific zshrc
 [ -e "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
+
+# Enable syntax highlighting which must come last
+ZSH_HL="$HOME/.homesick/repos/zsh-syntax-highlighting/"
+[ -e "${ZSH_HL}/zsh-syntax-highlighting.zsh" ] && \
+    source "${ZSH_HL}/zsh-syntax-highlighting.zsh"
+unset ZSH_HL

@@ -12,6 +12,7 @@ Setup
 
     # Install public repos
     homeshick clone --batch robbyrussell/oh-my-zsh
+    homeshick clone --batch zsh-users/zsh-syntax-highlighting
 
     # Link it all to $HOME
     homeshick link --force

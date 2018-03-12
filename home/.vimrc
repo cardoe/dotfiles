@@ -17,6 +17,9 @@ if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+" only use Linux style on Linux sources by default
+let g:linuxsty_patterns = [ "/linux/" ]
+
 " Turn on NeoBundle
 call neobundle#begin(expand('~/.vim/bundle/'))
 
@@ -34,6 +37,7 @@ NeoBundle 'keith/swift.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'vivien/vim-linux-coding-style'
 
 call neobundle#end()
 

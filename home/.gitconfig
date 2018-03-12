@@ -40,3 +40,5 @@
 	gpgsign = true
 [rerere]
 	enabled = true
+[log]
+    decorate = true

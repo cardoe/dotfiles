@@ -13,6 +13,9 @@
 	smtpencryption = tls
 	smtpuser = cardoe@cardoe.com
 	chainreplyto = false
+[sendemail.xen]
+    tocmd = `pwd`/scripts/get_maintainer.pl --nogit --nogit-fallback --norolestats --nom -f
+    cccmd = `pwd`/scripts/get_maintainer.pl --nogit --nogit-fallback --norolestats --nol -f
 [alias]
 	st = status
 	satus = status

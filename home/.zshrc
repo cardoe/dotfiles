@@ -107,6 +107,7 @@ type -p colordiff 2>&1 > /dev/null
 
 # Some utilities like to complain about EDITOR not being set
 export EDITOR=vim
+alias vi=vim
 
 # Ruby Gem Home
 type -p ruby 2>&1 > /dev/null

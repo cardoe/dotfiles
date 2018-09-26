@@ -101,6 +101,10 @@ type -p rg 2>&1 > /dev/null
 type -p exa 2>&1 > /dev/null
 [ $? -eq 0 ] && alias ls='exa' || alias exa='ls'
 
+# bat over cat
+type -p bat 2>&1 > /dev/null
+[ $? -eq 0 ] && alias bat='cat'
+
 # colordiff over diff
 type -p colordiff 2>&1 > /dev/null
 [ $? -eq 0 ] && alias diff='colordiff'

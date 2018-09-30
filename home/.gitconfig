@@ -14,8 +14,8 @@
 	smtpuser = cardoe@cardoe.com
 	chainreplyto = false
 [sendemail.xen]
-    tocmd = `pwd`/scripts/get_maintainer.pl --nogit --nogit-fallback --norolestats --nom
-    cccmd = `pwd`/scripts/get_maintainer.pl --nogit --nogit-fallback --norolestats --nol
+    to = xen-devel@lists.xenproject.org
+    cccmd = `git rev-parse --show-toplevel`/scripts/get_maintainer.pl
 [alias]
 	st = status
 	satus = status

@@ -59,7 +59,7 @@ type -p virtualenvwrapper.sh 2>&1 > /dev/null
 [ -n ${BREW_PREFIX} ] && plugins+="brew"
 
 # Go Path
-export GOPATH=${HOME}/go
+export GOPATH=${HOME}/work/go
 
 # Enable Homebrew installed items to come first before system items
 # But my overrides to be before that

@@ -1,0 +1,104 @@
+# only encrypted connections
+set ssl_force_tls = yes
+
+# IMAP setup
+set imap_user = "cardoe@cardoe.com"
+set from = "$imap_user"
+set folder = "imaps://imap.gmail.com/"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set record = ""
+set smtp_url = "smtps://$imap_user@smtp.gmail.com"
+set mbox = "+[Gmail]/All Mail"
+set trash="+[Gmail]/Trash"
+set imap_keepalive = 900
+
+# Gmail doesn't move things around, they're labels
+set move = no
+
+# fix Mutt issue on OSX
+# https://github.com/Homebrew/legacy-homebrew/issues/33419
+set smtp_authenticators = 'gssapi:login'
+
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+
+# get password
+source "~/.mutt/fetch-pass |"
+
+# mailing list info
+subscribe xen-devel@lists.xenproject.org
+
+# try to stop disconnects
+timeout-hook 'exec sync-mailbox'
+startup-hook 'exec sync-mailbox'
+shutdown-hook 'exec sync-mailbox'
+
+# threading with newest on top
+set sort = threads
+set sort_aux = reverse-last-date-received
+set strict_threads = yes
+
+# fetch mail with G
+bind index G imap-fetch-mail
+
+# don't use space since folders have spaces
+bind editor <space> noop
+macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
+
+# Reading
+ignore *
+unignore Date: From: To: CC: Bcc: Subject: Message-Id:
+hdr_order Subject: Date: From: To: CC: Bcc:
+set index_format = "%6C %{%b %d} %-15.15L [%Z] %s"
+set mark_old = no
+
+# Composing
+set editor='vim +"set spell" +"set tw=72" "+silent! /^\s*\n/" +nohl +0'
+
+# Colors
+color status white blue
+color index cyan default "~(~v ~p)"
+color index green  default ~N  # new
+color index red default ~D  # deleted
+color index brightmagenta default ~T  # tagged
+color index brightyellow default ~F  # flagged
+color header green default "^Subject:"
+color header yellow default "^Date:"
+color header yellow default "^To:"
+color header yellow default "^Cc:"
+color header yellow default "^Bcc:"
+color header yellow default "^From:"
+color header red default "^X-.*:"
+
+set send_charset = "utf-8"
+set assumed_charset = "iso-8859-1"
+
+## HTML
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+## Color for diff
+#
+color body brightred default "^-.*"
+color body brightgreen default "^[+].*"
+color body brightwhite default "^diff --git.*"
+color body brightwhite default "^index [a-f0-9].*"
+color body brightyellow default "^@@.*"
+
+# new mail notification
+set beep_new = yes
+#set new_mail_command = "terminal-notifier -message 'New Mail' &"
+
+# Sidebar
+set sidebar_visible = yes
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_short_path = yes
+set sidebar_folder_indent = yes
+set sidebar_delim_chars = "/"
+set sidebar_indent_string = "  "
+set imap_check_subscribed
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager <Esc>O sidebar-open

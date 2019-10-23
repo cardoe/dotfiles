@@ -49,7 +49,7 @@ export VIRTUALENVWRAPPER_PYTHON="${BREW_PREFIX:-/usr}/bin/python"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git screen git-extras command-not-found docker cargo pass)
+plugins=(git screen git-extras command-not-found docker cargo pass poetry)
 
 # Is virtualenvwrapper installed?
 type -p virtualenvwrapper.sh 2>&1 > /dev/null
@@ -77,6 +77,10 @@ type -p python3 2>&1 > /dev/null
 # Python bits in PATH as a fall back
 type -p python 2>&1 > /dev/null
 [ $? -eq 0 ] && export PATH="${PATH}:$(python -m site --user-base)/bin"
+# Poetry too
+export PATH="$HOME/.poetry/bin:${PATH}"
+# Python 3 first
+export PATH="/usr/local/opt/python/libexec/bin:${PATH}"
 
 source $ZSH/oh-my-zsh.sh
 

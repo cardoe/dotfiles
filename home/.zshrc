@@ -107,7 +107,7 @@ type -p exa 2>&1 > /dev/null
 
 # bat over cat
 type -p bat 2>&1 > /dev/null
-[ $? -eq 0 ] && alias bat='cat'
+[ $? -eq 0 ] && alias cat='bat' || alias bat='cat'
 
 # colordiff over diff
 type -p colordiff 2>&1 > /dev/null

@@ -158,3 +158,5 @@ ZSH_HL="$HOME/.homesick/repos/zsh-syntax-highlighting/"
 [ -e "${ZSH_HL}/zsh-syntax-highlighting.zsh" ] && \
     source "${ZSH_HL}/zsh-syntax-highlighting.zsh"
 unset ZSH_HL
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

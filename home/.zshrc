@@ -117,6 +117,9 @@ type -p colordiff 2>&1 > /dev/null
 export EDITOR=vim
 alias vi=vim
 
+# modern Docker
+export DOCKER_BUILDKIT=1
+
 # Ruby Gem Home
 type -p ruby 2>&1 > /dev/null
 if [ $? -eq 0 ]; then

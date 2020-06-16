@@ -49,11 +49,7 @@ export VIRTUALENVWRAPPER_PYTHON="${BREW_PREFIX:-/usr}/bin/python"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git screen git-extras command-not-found docker cargo pass poetry)
-
-# Is virtualenvwrapper installed?
-type -p virtualenvwrapper.sh 2>&1 > /dev/null
-[ $? -eq 0 ] && plugins+="virtualenvwrapper"
+plugins=(git screen git-extras command-not-found docker cargo)
 
 # Do we have Homebrew installed?
 [ -n ${BREW_PREFIX} ] && plugins+="brew"

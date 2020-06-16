@@ -38,6 +38,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'vivien/vim-linux-coding-style'
+NeoBundle 'ledger/vim-ledger'
 
 call neobundle#end()
 

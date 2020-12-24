@@ -156,3 +156,4 @@ ZSH_HL="$HOME/.homesick/repos/zsh-syntax-highlighting/"
 unset ZSH_HL
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/terraform@0.12/bin:$PATH"

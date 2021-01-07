@@ -67,16 +67,23 @@ export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
 # Enable GOPATH path
 export PATH="${PATH}:${GOPATH}/bin"
 
+type -p pyenv 2>&1 > /dev/null
+[ $? -eq 0 ] && eval "$(pyenv init -)"
+
 # Python 3 bits in PATH
 type -p python3 2>&1 > /dev/null
-[ $? -eq 0 ] && export PATH="$(python3 -m site --user-base)/bin:${PATH}"
+if [ $? -eq 0 ]; then
+    lpath="$(python3 -m site --user-base)/bin"
+    [ -d ${lpath} ] && export PATH="${lpath}:${PATH}"
+fi
 # Python bits in PATH as a fall back
 type -p python 2>&1 > /dev/null
-[ $? -eq 0 ] && export PATH="${PATH}:$(python -m site --user-base)/bin"
+if [ $? -eq 0 ]; then
+    lpath="$(python -m site --user-base)/bin"
+    [ -d ${lpath} ] && export PATH="${PATH}:${lpath}"
+fi
 # Poetry too
 export PATH="$HOME/.poetry/bin:${PATH}"
-# Python 3 first
-export PATH="/usr/local/opt/python/libexec/bin:${PATH}"
 
 source $ZSH/oh-my-zsh.sh
 

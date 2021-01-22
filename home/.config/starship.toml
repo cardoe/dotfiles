@@ -1,0 +1,8 @@
+[directory]
+truncation_length = 5
+
+[python]
+pyenv_version_name = true
+
+[kubernetes]
+disabled = false

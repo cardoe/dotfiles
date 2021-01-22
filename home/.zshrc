@@ -167,3 +167,7 @@ export PATH="/usr/local/opt/terraform@0.12/bin:$PATH"
 
 # enable krew plugins for kubectl
 export PATH="${PATH}:${HOME}/.krew/bin"
+
+# enable starship if we've got it
+type -p starship 2>&1 > /dev/null
+[ $? -eq 0 ] && eval "$(starship init zsh)"

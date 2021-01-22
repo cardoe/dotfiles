@@ -39,6 +39,8 @@
 	username = cardoe
 [color]
 	ui = auto
+[stash]
+    showPatch = true
 [commit]
 	gpgsign = true
 [rerere]

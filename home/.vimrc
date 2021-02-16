@@ -28,14 +28,13 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'tpope/vim-sensible'
 Plug 'bling/vim-airline'
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 Plug 'rust-lang/rust.vim'
-Plug 'kergoth/vim-bitbake'
-Plug 'keith/swift.vim'
-Plug 'kchmck/vim-coffee-script'
+" Plug 'kergoth/vim-bitbake'
+" Plug 'keith/swift.vim'
 Plug 'cespare/vim-toml'
-Plug 'leafgarland/typescript-vim'
-Plug 'vivien/vim-linux-coding-style'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'vivien/vim-linux-coding-style'
 Plug 'ledger/vim-ledger'
 
 call plug#end()

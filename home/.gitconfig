@@ -47,3 +47,5 @@
 	enabled = true
 [log]
     decorate = true
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs

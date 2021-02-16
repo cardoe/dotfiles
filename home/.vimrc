@@ -36,6 +36,7 @@ Plug 'cespare/vim-toml'
 " Plug 'leafgarland/typescript-vim'
 " Plug 'vivien/vim-linux-coding-style'
 Plug 'ledger/vim-ledger'
+Plug 'junegunn/fzf'
 
 call plug#end()
 

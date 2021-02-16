@@ -1,10 +1,11 @@
 " Skip initialization for vim-tiny or vim-small
 if !1 | finish | endif
 
-" Install NeoBundle if it is missing
-if !isdirectory(expand('~/.vim/bundle/neobundle.vim'))
-	call system('git clone https://github.com/Shougo/neobundle.vim.git
-		\ ~/.vim/bundle/neobundle.vim')
+" Install vim-plug if it is missing
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Run in improved mode if we aren't already
@@ -12,42 +13,32 @@ if has('vim_starting')
 	if &compatible
 		set nocompatible
 	endif
-
-	" Add NeoBundle to the path
-	set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " only use Linux style on Linux sources by default
 let g:linuxsty_patterns = [ "/linux/" ]
 
-" Turn on NeoBundle
-call neobundle#begin(expand('~/.vim/bundle/'))
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
 
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Turn on vim-plug
+call plug#begin('~/.vim/bundle')
 
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-NeoBundleLazy 'tpope/vim-sensible'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'rust-lang/rust.vim'
-NeoBundle 'kergoth/vim-bitbake'
-NeoBundle 'keith/swift.vim'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'cespare/vim-toml'
-NeoBundle 'leafgarland/typescript-vim'
-NeoBundle 'vivien/vim-linux-coding-style'
-NeoBundle 'ledger/vim-ledger'
+Plug 'tpope/vim-sensible'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'rust-lang/rust.vim'
+Plug 'kergoth/vim-bitbake'
+Plug 'keith/swift.vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'cespare/vim-toml'
+Plug 'leafgarland/typescript-vim'
+Plug 'vivien/vim-linux-coding-style'
+Plug 'ledger/vim-ledger'
 
-call neobundle#end()
-
-" Enable syntax highlighting and filetype support and indent
-syntax on
-filetype plugin indent on
-
-" Install missing bundles
-NeoBundleCheck
+call plug#end()
 
 " Terminals are meant to be black
 set bg=dark
@@ -131,5 +122,3 @@ nnoremap <leader>q :b#<CR>
 " Leave me for the end
 set exrc " enables per-directory .vimrc files
 set secure " disables unsafe commands in local .vimrc files
-
-NeoBundleSource

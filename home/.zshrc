@@ -123,6 +123,9 @@ alias vi=vim
 # modern Docker
 export DOCKER_BUILDKIT=1
 
+# prefer homebrew's over macOS
+[ -d /usr/local/opt/ruby/bin ] && \
+    export PATH="/usr/local/opt/ruby/bin:${PATH}"
 # Ruby Gem Home
 type -p ruby 2>&1 > /dev/null
 if [ $? -eq 0 ]; then

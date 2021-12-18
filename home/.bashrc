@@ -124,3 +124,6 @@ fi
 # enable starship if we've got it
 type -p starship 2>&1 > /dev/null
 [ $? -eq 0 ] && eval "$(starship init bash)"
+
+# Enable cargo
+. "$HOME/.cargo/env"

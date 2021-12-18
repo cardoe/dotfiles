@@ -41,7 +41,12 @@ ZSH_THEME="bira"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-BREW_PREFIX=$(brew --prefix 2> /dev/null)
+# Setup Homebrew
+if [ -e /opt/homebrew/bin/brew ]; then
+    eval $(/opt/homebrew/bin/brew shellenv)
+elif [ -e /usr/local/bin/brew ]; then
+    eval $(/usr/local/bin/brew shellenv)
+fi
 
 # Fix for the plugin below for brewed Python
 export VIRTUALENVWRAPPER_PYTHON="${BREW_PREFIX:-/usr}/bin/python"

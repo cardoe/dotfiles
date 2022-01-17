@@ -73,7 +73,10 @@ export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
 export PATH="${PATH}:${GOPATH}/bin"
 
 type -p pyenv 2>&1 > /dev/null
-[ $? -eq 0 ] && eval "$(pyenv init -)"
+if [ $? -eq 0 ]; then
+    eval "$(pyenv init --path)"
+    eval "$(pyenv init -)"
+fi
 
 # Python 3 bits in PATH
 type -p python3 2>&1 > /dev/null

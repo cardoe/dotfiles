@@ -33,7 +33,7 @@ Plug 'rust-lang/rust.vim'
 " Plug 'kergoth/vim-bitbake'
 " Plug 'keith/swift.vim'
 Plug 'cespare/vim-toml'
-" Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 " Plug 'vivien/vim-linux-coding-style'
 Plug 'ledger/vim-ledger'
 Plug 'junegunn/fzf'
@@ -77,6 +77,7 @@ autocmd FileType rust setlocal makeprg=cargo|setlocal errorformat=%f:%l:%c:%m
 
 " JavaScript Standard Style
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType typescript set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType json set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab
 

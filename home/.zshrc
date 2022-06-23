@@ -124,9 +124,12 @@ type -p bat 2>&1 > /dev/null
 type -p colordiff 2>&1 > /dev/null
 [ $? -eq 0 ] && alias diff='colordiff'
 
+# neovim over vim
+type -p nvim 2>&1 > /dev/null
+[ $? -eq 0 ] && alias vi=nvim || alias vi=vim
+
 # Some utilities like to complain about EDITOR not being set
-export EDITOR=vim
-alias vi=vim
+export EDITOR=$(alias vi | cut -f2 -d=)
 
 # modern Docker
 export DOCKER_BUILDKIT=1

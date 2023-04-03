@@ -67,9 +67,8 @@ plugins=(git screen git-extras command-not-found docker rust pyenv)
 # Go Path
 export GOPATH=${HOME}/work/go
 
-# Enable Homebrew installed items to come first before system items
-# But my overrides to be before that
-export PATH="${HOME}/.bin:/usr/local/sbin:/usr/local/bin:${PATH}"
+# My overrides go first
+export PATH="${HOME}/.bin:${PATH}"
 # Enable Cargo install path
 export PATH="${PATH}:${HOME}/.cargo/bin"
 # Enable GOROOT path

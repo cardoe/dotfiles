@@ -47,3 +47,6 @@
 	enabled = true
 [log]
     decorate = true
+[diff "ansible-vault"]
+	textconv = ansible-vault view
+	cachetextconv = false

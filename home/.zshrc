@@ -183,3 +183,9 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 # enable starship if we've got it
 type -p starship 2>&1 > /dev/null
 [ $? -eq 0 ] && eval "$(starship init zsh)"
+
+if [ -d "${HOME}/.nvm" ]; then
+	export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi

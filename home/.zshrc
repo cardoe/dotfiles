@@ -57,7 +57,7 @@ export VIRTUALENVWRAPPER_PYTHON="${BREW_PREFIX:-/usr}/bin/python"
 plugins=(git screen git-extras command-not-found docker rust)
 
 # Do we have Homebrew installed?
-[ -n ${BREW_PREFIX} ] && plugins+="brew"
+[ -n ${HOMEBREW_PREFIX} ] && plugins+="brew"
 
 # Go Path
 export GOPATH=${HOME}/work/go

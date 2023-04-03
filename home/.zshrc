@@ -51,10 +51,15 @@ fi
 # Fix for the plugin below for brewed Python
 export VIRTUALENVWRAPPER_PYTHON="${BREW_PREFIX:-/usr}/bin/python"
 
+# Get pyenv ready for the plugin
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:${PATH}"
+eval "$(pyenv init --path)"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git screen git-extras command-not-found docker rust)
+plugins=(git screen git-extras command-not-found docker rust pyenv)
 
 # Do we have Homebrew installed?
 [ -n ${HOMEBREW_PREFIX} ] && plugins+="brew"
@@ -71,12 +76,6 @@ export PATH="${PATH}:${HOME}/.cargo/bin"
 export PATH="${PATH}:/usr/local/opt/go/libexec/bin"
 # Enable GOPATH path
 export PATH="${PATH}:${GOPATH}/bin"
-
-type -p pyenv 2>&1 > /dev/null
-if [ $? -eq 0 ]; then
-    eval "$(pyenv init --path)"
-    eval "$(pyenv init -)"
-fi
 
 # Python 3 bits in PATH
 type -p python3 2>&1 > /dev/null

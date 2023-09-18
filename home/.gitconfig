@@ -25,6 +25,11 @@
 	ver = describe --match=v* --contains
 	show-ignore = ls-files -ci --exclude-standard
 	graph = log --graph --abbrev-commit --decorate --date=relative --all
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
 [diff]
 	renames = true
 [pull]

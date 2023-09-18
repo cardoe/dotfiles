@@ -37,6 +37,8 @@
 	helper = cache --timeout=3600
 [credential "https://github.com"]
 	username = cardoe
+[gitreview]
+    username = cardoe
 [color]
 	ui = auto
 [stash]

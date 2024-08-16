@@ -1,6 +1,7 @@
 [user]
 	name = Doug Goldstein
 	email = cardoe@cardoe.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHhD8CMzAz/lfMulzRUG72uUlOFvFEzXYB+9va72KGAh
 [core]
 	excludesfile = ~/.gitignore_global
 [imap]
@@ -48,6 +49,11 @@
 	ui = auto
 [stash]
     showPatch = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [commit]
 	gpgsign = true
 [rerere]

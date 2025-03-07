@@ -37,6 +37,7 @@ Plug 'leafgarland/typescript-vim'
 " Plug 'vivien/vim-linux-coding-style'
 Plug 'ledger/vim-ledger'
 Plug 'junegunn/fzf'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 

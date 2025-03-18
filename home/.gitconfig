@@ -18,11 +18,6 @@
     to = xen-devel@lists.xenproject.org
     cccmd = `git rev-parse --show-toplevel`/scripts/get_maintainer.pl
 [alias]
-	st = status
-	satus = status
-	review = !sh -c 'repo=$1 && repo=${repo:=`git rev-parse --symbolic-full-name @{upstream} 2>/dev/null || echo origin/master`} && git --no-pager log --reverse --oneline ${repo}..' -
-	revshow = !sh -c 'repo=$1 && repo=${repo:=`git rev-parse --symbolic-full-name @{upstream} 2>/dev/null || echo origin/master`} && git --no-pager log --reverse --oneline ${repo}.. | head -n ${0} | tail -n 1 | cut -f1 -d \" \" | xargs git show'
-	cp = cherry-pick -x
 	ver = describe --match=v* --contains
 	show-ignore = ls-files -ci --exclude-standard
 	graph = log --graph --abbrev-commit --decorate --date=relative --all

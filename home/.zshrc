@@ -52,14 +52,22 @@ fi
 export VIRTUALENVWRAPPER_PYTHON="${BREW_PREFIX:-/usr}/bin/python"
 
 # Get pyenv ready for the plugin
-export PYENV_ROOT="${HOME}/.pyenv"
-export PATH="${PYENV_ROOT}/bin:${PATH}"
-eval "$(pyenv init --path)"
+if [ -d "${HOME}/.pyenv" ]; then
+  export PYENV_ROOT="${HOME}/.pyenv"
+  export PATH="${PYENV_ROOT}/bin:${PATH}"
+  eval "$(pyenv init --path)"
+fi
+if type -p mise > /dev/null; then
+  eval "$(mise activate zsh)"
+fi
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git screen git-extras command-not-found docker rust pyenv)
+plugins=(git screen git-extras command-not-found docker rust)
+
+[ -n ${PYENV_ROOT} ] && plugins+="pyenv"
+[ -n ${MISE_SHELL} ] && plugins+="mise"
 
 # Do we have Homebrew installed?
 [ -n ${HOMEBREW_PREFIX} ] && plugins+="brew"

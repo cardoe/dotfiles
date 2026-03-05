@@ -1,0 +1,25 @@
+#!/bin/sh
+
+if [ $# -ne 1 ]; then
+  echo "usage: $0 <app-name>"
+  exit 1
+fi
+
+if ! type -p qsv 2>&1 >/dev/null; then
+  echo "Please install 'qsv' in your \$PATH"
+  exit 1
+fi
+
+argocd app get $1 -o json | jq -r '
+    (["KIND","NAMESPACE","NAME","HEALTH","MESSAGE"]|@csv),
+    (.status.resources[]
+     | select((.health.status // "") | test("^(Degraded|Missing|Progressing|Suspended)$"))
+     | [
+         (.kind // "-"),
+         (.namespace // "-"),
+         (.name // "-"),
+         (.health.status // "-"),
+         ((.health.message // "n/a") | gsub("[\r\n]+"; " "))
+       ]
+     | @csv)
+  ' | qsv table --pad 2

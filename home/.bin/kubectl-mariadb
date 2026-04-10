@@ -1,0 +1,28 @@
+#!/bin/sh
+
+while getopts "n:" opt; do
+  case "$opt" in
+    n) NAMESPACE="$OPTARG" ;;
+    *) echo "Usage: kubectl mariadb [-n namespace] <resource> -e <query>" >&2; exit 1 ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+RESOURCE="$1"
+if [ -z "${RESOURCE}" ]; then
+  echo "Usage: kubectl mariadb [-n namespace] <resource> -e <query>" >&2
+  exit 1
+fi
+shift 1
+
+NS_ARGS=""
+if [ -n "${NAMESPACE}" ]; then
+  NS_ARGS="-n ${NAMESPACE}"
+fi
+
+POD_NAME=$(kubectl ${NS_ARGS} get mariadb "${RESOURCE}" -o json | jq -r '.status.currentPrimary')
+PW_OBJ=$(kubectl ${NS_ARGS} get mariadb "${RESOURCE}" -o json | jq -r '.spec.rootPasswordSecretKeyRef.name')
+ROOT_PW=$(kubectl ${NS_ARGS} get secret "${PW_OBJ}" -o jsonpath='{.data.root-password}' | base64 -d)
+
+exec kubectl ${NS_ARGS} exec -it "${POD_NAME}" -- \
+  mariadb -uroot -p"$ROOT_PW" -e "$@"

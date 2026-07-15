@@ -66,11 +66,11 @@ fi
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git screen git-extras command-not-found docker rust)
 
-[ -n ${PYENV_ROOT} ] && plugins+="pyenv"
-[ -n ${MISE_SHELL} ] && plugins+="mise"
+[ -n "${PYENV_ROOT}" ] && plugins+="pyenv"
+[ -n "${MISE_SHELL}" ] && plugins+="mise"
 
 # Do we have Homebrew installed?
-[ -n ${HOMEBREW_PREFIX} ] && plugins+="brew"
+[ -n "${HOMEBREW_PREFIX}" ] && plugins+="brew"
 
 # Go Path
 export GOPATH=${HOME}/work/go

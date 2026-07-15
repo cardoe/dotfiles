@@ -163,7 +163,7 @@ type -p keychain 2>&1 > /dev/null
 if [ $? -eq 0 ]; then
 	# find keys that start with id but don't end in .pub
 	local keyfiles=$(find $HOME/.ssh/ -name 'id*' -a ! -name '*.pub')
-	eval $(keychain --eval --ssh-allow-forwarded "${keyfiles}")
+	eval $(keychain --eval --ssh-allow-gpg "${keyfiles}")
 	unset keyfiles
 fi
 

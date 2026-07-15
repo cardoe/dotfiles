@@ -24,5 +24,5 @@ POD_NAME=$(kubectl ${NS_ARGS} get mariadb "${RESOURCE}" -o json | jq -r '.status
 PW_OBJ=$(kubectl ${NS_ARGS} get mariadb "${RESOURCE}" -o json | jq -r '.spec.rootPasswordSecretKeyRef.name')
 ROOT_PW=$(kubectl ${NS_ARGS} get secret "${PW_OBJ}" -o jsonpath='{.data.root-password}' | base64 -d)
 
-exec kubectl ${NS_ARGS} exec -it "${POD_NAME}" -- \
+exec kubectl ${NS_ARGS} exec -it "${POD_NAME}" -c mariadb -- \
   mariadb -uroot -p"$ROOT_PW" -e "$@"
